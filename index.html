@@ -10,6 +10,110 @@
   <body>
     <h1>Hei JavaScript</h1>
     <script>
+      // taulukko_01
+      console.log("--Taulukko 01--");
+
+      // Alkuperäinen joukko tiimin jäseniä
+      let teamMembers = ["Jukka", "Emilia", "Miikka", "Saara"];
+
+      // Harjoitus 1: Käy läpi `teamMembers` ja kirjaa jokainen nimi konsoliin.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 1");
+      for (const member of teamMembers) {
+        console.log(member);
+      }
+
+      // Harjoitus 2: Poista ensimmäinen jäsen taulukosta.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 2");
+      teamMembers.shift(teamMembers);
+      console.log(teamMembers); // Tulostaa: ['Emilia', 'Miikka', 'Saara']
+
+      // Harjoitus 3: Poista taulukon viimeinen jäsen.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 3");
+      teamMembers.pop(teamMembers);
+      console.log(teamMembers); // ['Emilia', 'Miikka']
+
+      // Harjoitus 4: Lisää uusi jäsen "Aleksi" taulukon alkuun.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 4");
+      teamMembers.unshift("Aleksi");
+      console.log(teamMembers); // ['Aleksi', 'Emilia', 'Miikka']
+
+      // Harjoitus 5: Lisää uusi jäsen "Linda" taulukon loppuun.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 5");
+      teamMembers.push("Linda");
+      console.log(teamMembers); // ['Aleksi', 'Emilia', 'Miikka', 'Linda']
+
+      // Harjoitus 6: Luo uusi taulukko, joka ei sisällä kahta ensimmäistä jäsentä.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 6");
+      const newTeamMembers = teamMembers.slice(2);
+      console.log(newTeamMembers); // ['Miikka', 'Linda']
+
+      // Harjoitus 7: Etsi "Miikka" indeksi taulukossa.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 7");
+      //['Aleksi', 'Emilia', 'Miikka', 'Linda'] 0,1,2,3
+      // ['Miikka', 'Linda'] 0,1
+      console.log(teamMembers.indexOf("Miikka")); // Tulostaa: 2
+      console.log(newTeamMembers.indexOf("Miikka")); // Tulostaa: 0
+
+      // Harjoitus 8: Yritä löytää "Jaakko" indeksi (joka ei ole taulukossa).
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 8");
+      console.log(teamMembers.indexOf("Jaakko")); // Tulostaa: -1
+
+      // Harjoitus 9: Käytä `splice` poistaaksesi "Miikka" ja lisätäksesi "Karoliina" ja "Bettina" hänen tilalleen.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 9");
+      teamMembers.splice(2, 1, "Karoliina", "Bettina");
+      console.log(teamMembers); // ['Aleksi', 'Emilia', 'Karoliina', 'Bettina', 'Linda']
+
+      // Harjoitus 10: Liitä uusi jäsen "Hemmo" taulukon loppuun ja luo uusi taulukko.
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 10");
+      const updatedTeamMembers = teamMembers.concat("Hemmo");
+      console.log(updatedTeamMembers); // ['Aleksi', 'Emilia', 'Karoliina', 'Bettina', 'Linda', 'Hemmo']
+
+      // Harjoitus 11: Käyttäen `slice` kopioidaksesi koko taulukon
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 11");
+      const copiedTeamMembers = updatedTeamMembers.slice();
+      console.log(copiedTeamMembers); // ['Aleksi', 'Emilia', 'Karoliina', 'Bettina', 'Linda', 'Hemmo']
+
+      // Harjoitus 12: Yhdistä taulukot käyttäen `concat`
+      // Oletetaan, että `newMembers`-taulukko on määritelty
+      let newMembers = ["Tiina", "Daniel"];
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 12");
+      const updatedTeamMembers1 = updatedTeamMembers.concat(newMembers);
+      console.log(updatedTeamMembers1); // ['Aleksi', 'Emilia', 'Karoliina', 'Bettina', 'Linda', 'Hemmo', 'Tiina', 'Daniel']
+
+      // Harjoitus 13: Etsi kaikki Jukan esiintymät
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 13");
+      let amount = 0;
+      for (const name of updatedTeamMembers1) {
+        if (name === "Jukka") {
+          amount++;
+        }
+      }
+      console.log(`Taulukossa updatedTeamMembers1 on ${amount} Jukkaa.`);
+
+      // Harjoitus 14: Muuta jäsenet `map` avulla kirjoitettavaksi ISOILLA KIRJAIMILLA
+      // Kirjoita koodisi tähän:
+      console.log("Harjoitus 14");
+      const uppercaseMembers = updatedTeamMembers1.map((member) =>
+        member.toUpperCase()
+      );
+      console.log(uppercaseMembers); // ['ALEKSI', 'EMILIA', 'KAROLIINA', 'BETTINA', 'LINDA', 'HEMMO', 'TIINA', 'DANIEL']
+
+      // taulukko_02
+      console.log("--Taulukko 02--");
+
       console.log("Harjoitus 1");
       // Harjoitus 1: Määritä taulukon pituus ja ehto tarkistus
       let myAlphabet = ["A", "B", "C", "D", "E", "F", "G"];
